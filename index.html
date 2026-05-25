@@ -1,43 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthcare Dashboard</title>
+    <title>Healthcare Dashboard - MedDash</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="dashboard-wrapper">
+    <div class="dashboard-container">
         
         <aside class="sidebar">
-    <div class="logo">
-        <h2>MedDash</h2>
-    </div>
+            <div class="logo">
+                <h2>MedDash</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#">Dashboard</a></li>
+                    <li><a href="#">Appointments</a></li>
+                    <li><a href="#">Doctors</a></li>
+                    <li><a href="#">Patients</a></li>
+                    <li><a href="#">Messages</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" class="settings-link">Settings</a>
+            </div>
+        </aside>
 
-    <nav class="sidebar-nav">
-        <ul>
-            <li class="active"><a href="#">Dashboard</a></li>
-            <li><a href="#">Appointments</a></li>
-            <li><a href="#">Doctors</a></li>
-            <li><a href="#">Patients</a></li>
-            <li><a href="#">Messages</a></li>
-        </ul>
-    </nav>
-
-    <div class="sidebar-bottom">
-        <a href="#" class="settings-link">Settings</a>
-    </div>
-</aside>
-
-        <div class="main-content-wrapper">
-            
+        <div class="main-content">
             <header class="header">
-                </header>
+                <div class="search-box">
+                    <input type="text" placeholder="Пошук пацієнтів, лікарів, карт...">
+                </div>
+                <div class="user-profile">
+                    <span class="user-name">Микита Шевченко</span>
+                    <div class="user-avatar">НШ</div>
+                </div>
+            </header>
 
-            <main class="content">
-                </main>
-            
+            <main class="content-body">
+                <div class="welcome-banner">
+                    <h1>Вітаємо, Докторе!</h1>
+                    <p>Ось огляд вашої клініки на сьогодні.</p>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="card">Візити на сьогодні</div>
+                    <div class="card">Нові пацієнти</div>
+                    <div class="card">Статистика</div>
+                </div>
+            </main>
         </div>
+
     </div>
 </body>
 </html>
