@@ -1,0 +1,22 @@
+/* Базове скидання стилів */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Змінні (сюди впиши кольори з Figma) */
+:root {
+    --bg-color: #F5F6FA; /* колір фону всього дашборда */
+    --white: #FFFFFF; /* колір фону карток */
+    --primary-text: #202224; /* головний темний колір тексту */
+    --secondary-text: #828282; /* сірий колір тексту */
+    --accent-color: #438FFE; /* синій колір кнопок/активних елементів */
+    --font-family: 'Inter', sans-serif; /* Подивись у Figma, який шрифт використовується */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+}
