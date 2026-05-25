@@ -208,3 +208,92 @@ body {
 .orange-dot { background-color: #FF9800; }
 .red-dot { background-color: #F44336; }
 .blue-dot { background-color: #2196F3; }
+/* --- СТИЛІ ГРАФІКА ACTIVITY GROWTH --- */
+.activity-container {
+    background-color: #FFFFFF;
+    margin-top: 32px;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.activity-header h3 {
+    font-size: 18px;
+    color: #1A1D1F;
+}
+
+.month-select {
+    padding: 8px 16px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #828282;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+}
+
+.chart-area {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-bottom: 1px solid #EBEBEB; /* Лінія осі X */
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.bars-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.bar-group {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.bar {
+    width: 6px;
+    border-radius: 4px;
+    /* Анімація появи стовпчиків */
+    transition: height 0.5s ease; 
+}
+
+/* Кольори стовпчиків з макета */
+.orange-bar { background-color: #E6A96E; } 
+.blue-bar { background-color: #79B8C7; }
+.red-bar { background-color: #D77A73; }
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #828282;
+    font-size: 13px;
+}
+
+.chart-legend {
+    display: flex;
+    gap: 24px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #828282;
+}
