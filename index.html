@@ -15,7 +15,7 @@
 <body>
     <div class="dashboard-wrapper">
         
-        <!-- САЙДБАР (Ліве меню) -->
+        <!-- ЛІВА ПАНЕЛЬ (Сайдбар) -->
         <aside class="sidebar">
             <div class="logo">
                 <h2><i class="fa-solid fa-notes-medical"></i> MedDash</h2>
@@ -34,10 +34,9 @@
             </div>
         </aside>
 
-        <!-- ПРАВА ЧАСТИНА (Контент) -->
+        <!-- ЦЕНТРАЛЬНА ЧАСТИНА (Контент) -->
         <div class="main-content">
             
-            <!-- Хедер (Верхня панель) -->
             <header class="header">
                 <div class="search-box">
                     <input type="text" placeholder="Пошук пацієнтів, лікарів...">
@@ -54,7 +53,7 @@
                     <p>August 12, 2021</p>
                 </div>
                 
-                <!-- БЛОК 1: ТРИ КАРТКИ -->
+                <!-- Три картки -->
                 <div class="dashboard-grid">
                     <div class="card">
                         <div class="card-header">
@@ -90,7 +89,7 @@
                     </div>
                 </div>
 
-                <!-- БЛОК 2: ГРАФІК АКТИВНОСТІ -->
+                <!-- Графік активності -->
                 <div class="activity-container">
                     <div class="activity-header">
                         <h3>Activity Growth</h3>
@@ -123,6 +122,46 @@
                 
             </main>
         </div>
+
+        <!-- ПРАВА ТЕМНА ПАНЕЛЬ -->
+        <aside class="right-panel">
+            
+            <div class="panel-section">
+                <h2>BMI Calculator</h2>
+                <div class="bmi-card">
+                    <div class="bmi-info">
+                        <span class="bmi-value">24.5</span>
+                        <span class="bmi-status">Normal</span>
+                    </div>
+                    <div class="bmi-scale">
+                        <div class="scale-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <h2>Upcoming Appointments</h2>
+                
+                <div class="appointment-card">
+                    <div class="app-icon"><i class="fa-solid fa-tooth"></i></div>
+                    <div class="app-details">
+                        <h4>Dr. Marcus</h4>
+                        <p>Dentist • 08:00 AM</p>
+                    </div>
+                </div>
+                
+                <div class="appointment-card">
+                    <div class="app-icon" style="color: #D77A73;"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="app-details">
+                        <h4>Dr. Alysa</h4>
+                        <p>Cardiologist • 10:30 AM</p>
+                    </div>
+                </div>
+
+            </div>
+            
+        </aside>
+
     </div>
 </body>
 </html>
