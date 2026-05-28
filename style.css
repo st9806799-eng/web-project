@@ -83,8 +83,8 @@ body { font-family: 'Inter', sans-serif; background-color: #F8F9FD; color: #1A1D
 .scale-bar { height: 8px; border-radius: 4px; background: linear-gradient(to right, #79B8C7 30%, #E6A96E 60%, #D77A73 100%); }
 
 /* Стиль для силуету людини */
-.bmi-image { display: flex; align-items: center; justify-content: center; padding-right: 10px; }
-.bmi-image i { font-size: 70px; color: #79B8C7; opacity: 0.8; filter: drop-shadow(0 0 10px rgba(121, 184, 199, 0.3)); }
+.bmi-image { display: flex; align-items: center; justify-content: center; padding-right: 10px; width: 110px; }
+.human-silhouette { width: 100%; height: auto; object-fit: contain; }
 
 /* Картки лікарів (Appointments) */
 .appointment-card { display: flex; align-items: center; gap: 16px; background-color: #272A2D; padding: 16px; border-radius: 16px; margin-bottom: 16px; }
