@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare Dashboard</title>
+    <!-- Підключення іконок та шрифтів -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Підключення стилів -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="dashboard-container">
+    <div class="dashboard-wrapper">
+        
+        <!-- САЙДБАР (Ліве меню) -->
         <aside class="sidebar">
-            <div class="logo"><h2><i class="fa-solid fa-notes-medical"></i> MedDash</h2></div>
+            <div class="logo">
+                <h2><i class="fa-solid fa-notes-medical"></i> MedDash</h2>
+            </div>
             <nav class="sidebar-nav">
                 <ul>
                     <li class="active"><a href="#"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
@@ -20,37 +29,100 @@
                     <li><a href="#"><i class="fa-regular fa-message"></i> Messages</a></li>
                 </ul>
             </nav>
-            <div class="sidebar-bottom"><a href="#" class="settings-link"><i class="fa-solid fa-gear"></i> Settings</a></div>
+            <div class="sidebar-bottom">
+                <a href="#" class="settings-link"><i class="fa-solid fa-gear"></i> Settings</a>
+            </div>
         </aside>
 
-        <main class="main-content">
+        <!-- ПРАВА ЧАСТИНА (Контент) -->
+        <div class="main-content">
+            
+            <!-- Хедер (Верхня панель) -->
             <header class="header">
-                <div class="search-box"><input type="text" placeholder="Пошук..."></div>
-                <div class="user-profile"><span class="user-name">Микита Шевченко</span><div class="user-avatar">НШ</div></div>
+                <div class="search-box">
+                    <input type="text" placeholder="Пошук пацієнтів, лікарів...">
+                </div>
+                <div class="user-profile">
+                    <span class="user-name">Микита Шевченко</span>
+                    <div class="user-avatar">НШ</div>
+                </div>
             </header>
 
-            <div class="content-body">
-                <div class="welcome-banner"><h1>Health Overview</h1><p>August 12, 2021</p></div>
-                
-                <div class="dashboard-grid">
-                    <div class="card"><div class="card-header"><div class="icon-box orange"><i class="fa-solid fa-droplet"></i></div><h3>Blood Sugar</h3></div><div class="card-value"><h2>80</h2><span>mg/dL</span></div><div class="card-status"><span class="dot orange-dot"></span> Normal</div></div>
-                    <div class="card"><div class="card-header"><div class="icon-box red"><i class="fa-solid fa-heart-pulse"></i></div><h3>Heart Rate</h3></div><div class="card-value"><h2>98</h2><span>bpm</span></div><div class="card-status"><span class="dot red-dot"></span> Normal</div></div>
-                    <div class="card"><div class="card-header"><div class="icon-box blue"><i class="fa-solid fa-tint"></i></div><h3>Blood Pressure</h3></div><div class="card-value"><h2>102</h2><span>/72 mmHg</span></div><div class="card-status"><span class="dot blue-dot"></span> Normal</div></div>
+            <main class="content-body">
+                <div class="welcome-banner">
+                    <h1>Health Overview</h1>
+                    <p>August 12, 2021</p>
                 </div>
-
-                <div class="activity-container">
-                    <div class="activity-header"><h3>Activity Growth</h3><select class="month-select"><option>Jan 2021</option></select></div>
-                    <div class="chart-area">
-                        <div class="bars-wrapper">
-                            <div class="bar-group"><div class="bar orange-bar" style="height:40%"></div><div class="bar blue-bar" style="height:70%"></div><div class="bar red-bar" style="height:50%"></div></div>
-                            <div class="bar-group"><div class="bar orange-bar" style="height:60%"></div><div class="bar blue-bar" style="height:30%"></div><div class="bar red-bar" style="height:80%"></div></div>
-                            <div class="bar-group"><div class="bar orange-bar" style="height:80%"></div><div class="bar blue-bar" style="height:50%"></div><div class="bar red-bar" style="height:40%"></div></div>
+                
+                <!-- БЛОК 1: ТРИ КАРТКИ -->
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="icon-box orange"><i class="fa-solid fa-droplet"></i></div>
+                            <h3>Blood Sugar</h3>
                         </div>
-                        <div class="chart-labels"><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span></div>
+                        <div class="card-value">
+                            <h2>80</h2><span>mg / dL</span>
+                        </div>
+                        <div class="card-status"><span class="dot orange-dot"></span> Normal</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="icon-box red"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <h3>Heart Rate</h3>
+                        </div>
+                        <div class="card-value">
+                            <h2>98</h2><span>bpm</span>
+                        </div>
+                        <div class="card-status"><span class="dot red-dot"></span> Normal</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="icon-box blue"><i class="fa-solid fa-tint"></i></div>
+                            <h3>Blood Pressure</h3>
+                        </div>
+                        <div class="card-value">
+                            <h2>102</h2><span>/ 72 mmHg</span>
+                        </div>
+                        <div class="card-status"><span class="dot blue-dot"></span> Normal</div>
                     </div>
                 </div>
-            </div>
-        </main>
+
+                <!-- БЛОК 2: ГРАФІК АКТИВНОСТІ -->
+                <div class="activity-container">
+                    <div class="activity-header">
+                        <h3>Activity Growth</h3>
+                        <select class="month-select">
+                            <option>Jan 2021</option>
+                            <option>Feb 2021</option>
+                        </select>
+                    </div>
+                    
+                    <div class="chart-area">
+                        <div class="bars-wrapper">
+                            <div class="bar-group"><div class="bar orange-bar" style="height: 40%;"></div><div class="bar blue-bar" style="height: 70%;"></div><div class="bar red-bar" style="height: 50%;"></div></div>
+                            <div class="bar-group"><div class="bar orange-bar" style="height: 60%;"></div><div class="bar blue-bar" style="height: 30%;"></div><div class="bar red-bar" style="height: 80%;"></div></div>
+                            <div class="bar-group"><div class="bar orange-bar" style="height: 80%;"></div><div class="bar blue-bar" style="height: 50%;"></div><div class="bar red-bar" style="height: 40%;"></div></div>
+                            <div class="bar-group"><div class="bar orange-bar" style="height: 30%;"></div><div class="bar blue-bar" style="height: 90%;"></div><div class="bar red-bar" style="height: 60%;"></div></div>
+                            <div class="bar-group"><div class="bar orange-bar" style="height: 50%;"></div><div class="bar blue-bar" style="height: 40%;"></div><div class="bar red-bar" style="height: 70%;"></div></div>
+                            <div class="bar-group"><div class="bar orange-bar" style="height: 70%;"></div><div class="bar blue-bar" style="height: 80%;"></div><div class="bar red-bar" style="height: 30%;"></div></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+                        </div>
+                    </div>
+
+                    <div class="chart-legend">
+                        <div class="legend-item"><span class="dot orange-dot"></span> Aerobics</div>
+                        <div class="legend-item"><span class="dot blue-dot"></span> Yoga</div>
+                        <div class="legend-item"><span class="dot red-dot"></span> Meditation</div>
+                    </div>
+                </div>
+                
+            </main>
+        </div>
     </div>
 </body>
 </html>
