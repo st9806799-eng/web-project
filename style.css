@@ -6,7 +6,7 @@ body { font-family: 'Inter', sans-serif; background-color: #F8F9FD; color: #1A1D
 .dashboard-wrapper { display: flex; min-height: 100vh; }
 
 /* --- ЛІВИЙ САЙДБАР --- */
-.sidebar { width: 260px; background-color: #FFFFFF; border-right: 1px solid #EBEBEB; display: flex; flex-direction: column; padding: 32px 24px; }
+.sidebar { width: 260px; background-color: #FFFFFF; border-right: 1px solid #EBEBEB; display: flex; flex-direction: column; padding: 32px 24px; shrink: 0; }
 .logo h2 { color: #1A1D1F; font-size: 24px; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
 .logo h2 i { color: #438FFE; }
 .sidebar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 40px; }
@@ -41,10 +41,9 @@ body { font-family: 'Inter', sans-serif; background-color: #F8F9FD; color: #1A1D
     display: flex; 
     flex-direction: column; 
     gap: 16px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавність анімації */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
     cursor: pointer;
 }
-/* Ефект наведення для центральних карток */
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
@@ -73,20 +72,20 @@ body { font-family: 'Inter', sans-serif; background-color: #F8F9FD; color: #1A1D
 .activity-header h3 { font-size: 18px; color: #1A1D1F; }
 .month-select { padding: 8px 16px; border: 1px solid #EBEBEB; border-radius: 8px; background-color: transparent; color: #828282; outline: none; cursor: pointer; font-family: 'Inter', sans-serif;}
 
-.chart-area { height: 220px; display: flex; flex-direction: column; justify-content: flex-end; border-bottom: 1px solid #EBEBEB; padding-bottom: 12px; margin-bottom: 24px; }
-.bars-wrapper { display: flex; justify-content: space-between; align-items: flex-end; height: 100%; padding: 0 16px; }
+.chart-area { height: 220px; display: flex; flex-direction: column; justify-content: flex-end; border-bottom: 1px solid #EBEBEB; padding-bottom: 12px; margin-bottom: 24px; overflow-x: auto; }
+.bars-wrapper { display: flex; justify-content: space-between; align-items: flex-end; height: 100%; padding: 0 16px; min-width: 400px; }
 .bar-group { display: flex; gap: 6px; align-items: flex-end; height: 100%; }
 .bar { width: 8px; border-radius: 4px; transition: height 0.5s ease; }
 .orange-bar { background-color: #E6A96E; }
 .blue-bar { background-color: #79B8C7; }
 .red-bar { background-color: #D77A73; }
 
-.chart-labels { display: flex; justify-content: space-between; padding: 0 24px; color: #828282; font-size: 13px; margin-top: 12px; }
-.chart-legend { display: flex; gap: 24px; margin-top: 8px; }
+.chart-labels { display: flex; justify-content: space-between; padding: 0 24px; color: #828282; font-size: 13px; margin-top: 12px; min-width: 400px; }
+.chart-legend { display: flex; gap: 24px; margin-top: 8px; flex-wrap: wrap; }
 .legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #828282; }
 
 /* --- ПРАВА ТЕМНА ПАНЕЛЬ --- */
-.right-panel { width: 340px; background-color: #1A1D1F; color: #FFFFFF; padding: 40px 32px; display: flex; flex-direction: column; gap: 40px; }
+.right-panel { width: 340px; background-color: #1A1D1F; color: #FFFFFF; padding: 40px 32px; display: flex; flex-direction: column; gap: 40px; shrink: 0; }
 .panel-section h2 { font-size: 18px; font-weight: 500; margin-bottom: 24px; color: #FFFFFF; }
 
 /* Картка BMI */
@@ -98,7 +97,6 @@ body { font-family: 'Inter', sans-serif; background-color: #F8F9FD; color: #1A1D
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
-/* Наведення на BMI */
 .bmi-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
@@ -120,7 +118,6 @@ body { font-family: 'Inter', sans-serif; background-color: #F8F9FD; color: #1A1D
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
 }
-/* Наведення на лікарів — робимо їх трохи світлішими та піднімаємо */
 .appointment-card:hover {
     transform: translateY(-3px);
     background-color: #2F3336;
@@ -157,7 +154,6 @@ body { font-family: 'Inter', sans-serif; background-color: #F8F9FD; color: #1A1D
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
-/* Наведення на білі картки замірів */
 .m-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
@@ -176,7 +172,101 @@ body { font-family: 'Inter', sans-serif; background-color: #F8F9FD; color: #1A1D
     display: block; 
     transition: transform 0.4s ease;
 }
-/* Ефектний легкий зум для самої фігури людини при наведенні на блок замірів */
 .measurements-body:hover .human-silhouette-large {
     transform: scale(1.03);
+}
+
+/* ==========================================================================
+   МЕДІАЗАПИТИ ДЛЯ АДАПТИВНОСТІ (Планшети та Телефони)
+   ========================================================================== */
+
+/* 1. Для великих екранів / планшетів (до 1100px) */
+@media (max-width: 1100px) {
+    .dashboard-wrapper {
+        flex-direction: column; /* Складаємо меню, центр і праву панель вертикально */
+    }
+    
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #EBEBEB;
+        padding: 20px 40px;
+    }
+    
+    .sidebar-nav ul {
+        flex-direction: row; /* Сайдбар зверху стає горизонтальним рядком */
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    
+    .logo h2 { margin-bottom: 0; }
+    .sidebar-bottom { margin-top: 10px; }
+    
+    .right-panel {
+        width: 100%; /* Темна панель займає всю ширину */
+    }
+}
+
+/* 2. Для стандартних планшетів та великих телефонів (до 768px) */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Три картки здоров'я стають одна під одною */
+    }
+    
+    .header {
+        flex-direction: column; /* Хедер розбивається на два рядки */
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .search-box input {
+        width: 100%; /* Пошук розтягується */
+    }
+    
+    .content-body {
+        padding: 20px; /* Менші відступи на малих екранах */
+    }
+}
+
+/* 3. Для мобільних телефонів (до 480px) */
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 20px;
+    }
+    
+    .sidebar-nav ul {
+        gap: 4px;
+    }
+    
+    .sidebar-nav a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .measurements-body {
+        flex-direction: column; /* Блок з людиною: картки зверху, людина знизу */
+        align-items: center;
+        gap: 24px;
+    }
+    
+    .measurements-cards {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .m-card {
+        width: 100%; /* Картки замірів на весь екран */
+        max-width: 280px;
+    }
+    
+    .measurements-figure {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .right-panel {
+        padding: 30px 20px;
+    }
 }
