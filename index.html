@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare Dashboard</title>
-    <!-- Підключення іконок та шрифтів -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Підключення стилів -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="dashboard-wrapper">
         
-        <!-- ЛІВА ПАНЕЛЬ (Сайдбар) -->
         <aside class="sidebar">
             <div class="logo">
                 <h2><i class="fa-solid fa-notes-medical"></i> MedDash</h2>
@@ -34,7 +31,6 @@
             </div>
         </aside>
 
-        <!-- ЦЕНТРАЛЬНА ЧАСТИНА (Контент) -->
         <div class="main-content">
             
             <header class="header">
@@ -53,7 +49,6 @@
                     <p>August 12, 2021</p>
                 </div>
                 
-                <!-- Три картки -->
                 <div class="dashboard-grid">
                     <div class="card">
                         <div class="card-header">
@@ -89,7 +84,6 @@
                     </div>
                 </div>
 
-                <!-- Графік активності -->
                 <div class="activity-container">
                     <div class="activity-header">
                         <h3>Activity Growth</h3>
@@ -123,18 +117,24 @@
             </main>
         </div>
 
-        <!-- ПРАВА ТЕМНА ПАНЕЛЬ -->
         <aside class="right-panel">
             
             <div class="panel-section">
                 <h2>BMI Calculator</h2>
                 <div class="bmi-card">
-                    <div class="bmi-info">
-                        <span class="bmi-value">24.5</span>
-                        <span class="bmi-status">Normal</span>
-                    </div>
-                    <div class="bmi-scale">
-                        <div class="scale-bar"></div>
+                    <div class="bmi-layout">
+                        <div class="bmi-text-side">
+                            <div class="bmi-info">
+                                <span class="bmi-value">24.5</span>
+                                <span class="bmi-status">Normal</span>
+                            </div>
+                            <div class="bmi-scale">
+                                <div class="scale-bar"></div>
+                            </div>
+                        </div>
+                        <div class="bmi-image">
+                            <i class="fa-solid fa-person" class="human-silhouette"></i>
+                        </div>
                     </div>
                 </div>
             </div>
